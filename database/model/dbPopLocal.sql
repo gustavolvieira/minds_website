@@ -2,7 +2,7 @@
 --
 -- Host: 127.0.0.1    Database: minds
 -- ------------------------------------------------------
--- Server version	5.7.21-0ubuntu0.16.04.1
+-- Server version	5.7.19
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,20 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `association`
---
-
-DROP TABLE IF EXISTS `association`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `association` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `label` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `association`
 --
 
@@ -38,24 +24,6 @@ LOCK TABLES `association` WRITE;
 INSERT INTO `association` VALUES (1,'Lab Coordinator'),(2,'Postdoctoral Researcher'),(3,'PhD Student'),(4,'Masters Student'),(5,'Undergraduate Student'),(6,'Collaborator');
 /*!40000 ALTER TABLE `association` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `paper`
---
-
-DROP TABLE IF EXISTS `paper`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `paper` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(300) NOT NULL,
-  `venue` varchar(200) DEFAULT NULL,
-  `abstract` text,
-  `url` varchar(256) DEFAULT NULL,
-  `published_at` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `paper`
@@ -67,26 +35,13 @@ LOCK TABLES `paper` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `post`
+-- Dumping data for table `paper_tag`
 --
 
-DROP TABLE IF EXISTS `post`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `post` (
-  `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `title` varchar(200) NOT NULL,
-  `text` text NOT NULL,
-  `image_url` varchar(256) DEFAULT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  `is_active` tinyint(1) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`id`),
-  KEY `fk_post_user1_idx` (`user_id`),
-  CONSTRAINT `fk_post_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+LOCK TABLES `paper_tag` WRITE;
+/*!40000 ALTER TABLE `paper_tag` DISABLE KEYS */;
+/*!40000 ALTER TABLE `paper_tag` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Dumping data for table `post`
@@ -99,34 +54,62 @@ INSERT INTO `post` VALUES (1,4,'Best Thesis Award','<p>MINDS contributor <a href
 UNLOCK TABLES;
 
 --
--- Table structure for table `user`
+-- Dumping data for table `project`
 --
 
-DROP TABLE IF EXISTS `user`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `full_name` varchar(90) NOT NULL,
-  `preferred_name` varchar(45) DEFAULT NULL,
-  `description` text,
-  `email` varchar(255) NOT NULL,
-  `phone` varchar(20) DEFAULT NULL,
-  `country` varchar(40) DEFAULT NULL,
-  `lattes_url` varchar(256) DEFAULT NULL,
-  `researchgate_url` varchar(256) DEFAULT NULL,
-  `webpage_url` varchar(256) DEFAULT NULL,
-  `is_admin` tinyint(1) NOT NULL DEFAULT '0',
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  `photo_url` varchar(256) DEFAULT NULL,
-  `is_active` tinyint(1) NOT NULL DEFAULT '1',
-  `remember_token` varchar(100) DEFAULT NULL,
-  `password` varchar(70) DEFAULT NULL,
-  `affiliation` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+LOCK TABLES `project` WRITE;
+/*!40000 ALTER TABLE `project` DISABLE KEYS */;
+INSERT INTO `project` VALUES (1,'Data Visualization in Many Objective Optimization Problems (MaOPs)','Data Visualization in high-dimensional spaces is a great challenge and an important tool for decision-making.  The method of Aggregation Trees was an important step in visualization in MaOPs, allowing a greater understanding of the problem. This method is based on the sequential aggregation of objectives, which is visually represented into a tree, based on a measure of conflict between pairs of (groups of) objectives. The method allows the visualization of a hierarchy for aggregation of the objectives, with possibility to create new constraints for the problem or reduce the number of objectives in a further analysis (Silva et al, 2016).','2014-12-01 00:00:00',NULL,'2018-03-28 00:00:00','2018-03-28 00:00:00',1);
+/*!40000 ALTER TABLE `project` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `project_image`
+--
+
+LOCK TABLES `project_image` WRITE;
+/*!40000 ALTER TABLE `project_image` DISABLE KEYS */;
+INSERT INTO `project_image` VALUES (1,'Chord Diagram for a 12 objective Optimization problem',1,'projects_images/project_1/Chord_01.png',1),(2,'Chord Diagram for a 3 objective Optimization problem',2,'projects_images/project_1/Chord_02.png',1),(3,'Angular Mapping for points in five dimensional space',3,'projects_images/project_1/nav_new_transp.png',1),(4,'Integrated Visualization Tool for a 5 objective optimization problem',4,'projects_images/project_1/M2_P05_5obj_CONE_V3.png',1),(5,'Integrated Visualization Tool for a 5 objective optimization problem',5,'projects_images/project_1/M2_P3_5obj_LWV_V2.png',1),(6,'Integrated Visualization Tool for a 10 objective optimization problem',6,'projects_images/project_1/M2_P05_10obj_LWV_V1.png',1);
+/*!40000 ALTER TABLE `project_image` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `project_tag`
+--
+
+LOCK TABLES `project_tag` WRITE;
+/*!40000 ALTER TABLE `project_tag` DISABLE KEYS */;
+/*!40000 ALTER TABLE `project_tag` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `project_user`
+--
+
+LOCK TABLES `project_user` WRITE;
+/*!40000 ALTER TABLE `project_user` DISABLE KEYS */;
+INSERT INTO `project_user` VALUES (1,1,2),(1,23,1);
+/*!40000 ALTER TABLE `project_user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `resource`
+--
+
+LOCK TABLES `resource` WRITE;
+/*!40000 ALTER TABLE `resource` DISABLE KEYS */;
+INSERT INTO `resource` VALUES (1,'AT.m','MATLAB script for the Aggregation Tree','downloads/AT.m',1,23,'2018-03-28 00:00:00','2018-03-28 00:00:00'),(2,'CAP_vis.R','R script for the Integrated Visualization Tool','downloads/CAP_vis.R',1,23,'2018-03-28 00:00:00','2018-03-28 00:00:00');
+/*!40000 ALTER TABLE `resource` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `tag`
+--
+
+LOCK TABLES `tag` WRITE;
+/*!40000 ALTER TABLE `tag` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tag` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Dumping data for table `user`
@@ -139,37 +122,6 @@ INSERT INTO `user` VALUES (1,'Frederico Gadelha Guimarães',NULL,'Dr. Frederico 
 UNLOCK TABLES;
 
 --
--- Table structure for table `user_association`
---
-
-DROP TABLE IF EXISTS `user_association`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user_association` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `association_id` int(11) NOT NULL,
-  `start_date` datetime NOT NULL,
-  `end_date` datetime DEFAULT NULL,
-  `is_visiting` tinyint(1) NOT NULL DEFAULT '0',
-  `project_title` varchar(200) DEFAULT NULL,
-  `supervisor_id` int(11) DEFAULT NULL,
-  `supervisor_name` varchar(90) DEFAULT NULL,
-  `cosupervisor_id` int(11) DEFAULT NULL,
-  `cosupervisor_name` varchar(90) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_user_has_association_type_user_idx` (`user_id`),
-  KEY `fk_user_has_association_type_user1_idx` (`supervisor_id`),
-  KEY `fk_user_association_association1_idx` (`association_id`),
-  KEY `fk_user_association_user1_idx` (`cosupervisor_id`),
-  CONSTRAINT `fk_user_association_association1` FOREIGN KEY (`association_id`) REFERENCES `association` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_user_association_user1` FOREIGN KEY (`cosupervisor_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_user_has_association_type_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_user_has_association_type_user1` FOREIGN KEY (`supervisor_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `user_association`
 --
 
@@ -180,25 +132,6 @@ INSERT INTO `user_association` VALUES (1,1,1,'2014-01-01 20:23:45',NULL,0,NULL,N
 UNLOCK TABLES;
 
 --
--- Table structure for table `user_paper`
---
-
-DROP TABLE IF EXISTS `user_paper`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user_paper` (
-  `user_id` int(11) NOT NULL,
-  `paper_id` int(11) NOT NULL,
-  `author_order` int(11) DEFAULT NULL,
-  PRIMARY KEY (`user_id`,`paper_id`),
-  KEY `fk_user_has_paper_paper1_idx` (`paper_id`),
-  KEY `fk_user_has_paper_user1_idx` (`user_id`),
-  CONSTRAINT `fk_user_has_paper_paper1` FOREIGN KEY (`paper_id`) REFERENCES `paper` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_user_has_paper_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `user_paper`
 --
 
@@ -206,24 +139,6 @@ LOCK TABLES `user_paper` WRITE;
 /*!40000 ALTER TABLE `user_paper` DISABLE KEYS */;
 /*!40000 ALTER TABLE `user_paper` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `user_post`
---
-
-DROP TABLE IF EXISTS `user_post`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user_post` (
-  `user_id` int(11) NOT NULL COMMENT 'related users',
-  `post_id` int(11) NOT NULL,
-  PRIMARY KEY (`user_id`,`post_id`),
-  KEY `fk_user_has_post_post1_idx` (`post_id`),
-  KEY `fk_user_has_post_user1_idx` (`user_id`),
-  CONSTRAINT `fk_user_has_post_post1` FOREIGN KEY (`post_id`) REFERENCES `post` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_user_has_post_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `user_post`
@@ -244,4 +159,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-05 14:49:25
+-- Dump completed on 2018-03-28 15:54:29
