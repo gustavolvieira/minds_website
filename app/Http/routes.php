@@ -43,6 +43,12 @@ Route::get('/publications_example', function () {
 Route::get('/project_example', function () {
     return view('static_examples/project');
 });
+Route::get('/projects_example', function () {
+    return view('static_examples/projects');
+});
+Route::get('/resources_example', function () {
+    return view('static_examples/resources');
+});
 
 
 //Dynamic Pages

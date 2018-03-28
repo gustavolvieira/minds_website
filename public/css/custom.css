@@ -351,4 +351,17 @@
 #news #title {
   font-size: 36px; }
 
+#resources .post .h3::before {
+  content: '';
+  width: 54px;
+  height: 4px;
+  background-color: #000;
+  position: absolute;
+  left: 2px;
+  top: 24px; }
+#resources .post .h3 {
+  padding-left: 65px;
+  line-height: 2;
+  font-size: 24px; }
+
 /*# sourceMappingURL=custom.css.map */
