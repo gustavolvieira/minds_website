@@ -32,6 +32,7 @@
                             </div>
                             <p>{{$i_resource['description']}}</p>
                             <div class="download-div post-meta section-xs-top-15">
+                                {{--<a href="{{url('https://www.google.com')}}" class="download-btn" download><span class="material-icons-file_download"><span>Download</span></span></a>--}}
                                 <a href="{{asset($i_resource['file_path'])}}" class="download-btn" download><span class="material-icons-file_download"><span>Download</span></span></a>
                             </div>
                         </div>
