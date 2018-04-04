@@ -94,12 +94,82 @@
         </section>
 
         {{--Recent Papers--}}
+        {{--<section class="section-80">--}}
+            {{--<div class="shell">--}}
+                {{--<div class="range">--}}
+                    {{--<div class="cell-md-4 text-center">--}}
+                        {{--<div class="divider divider-1"></div>--}}
+                        {{--<h1 class="divider-off text-uppercase section-md-27">Recent<br class="hidden visible-md-block visible-lg-block">	Papers--}}
+                        {{--</h1>--}}
+                        {{--<div class="divider divider-1"></div>--}}
+                    {{--</div>--}}
+                    {{--<div class="cell-md-8 cell-sm-12 text-left">--}}
+                        {{--<div class="post paper">--}}
+                            {{--<a class="h3" href="https://www.researchgate.net/publication/320809382_Probabilistic_Forecasting_with_Seasonal_Ensemble_Fuzzy_Time-Series">Probabilistic Forecasting with Seasonal Ensemble Fuzzy Time-Series</a>--}}
+                            {{--<div class="post-meta">--}}
+                                {{--<div class="meta-line">--}}
+                                    {{--<span class="material-icons-person"><span class="p">--}}
+                                        {{--<a href="team/3/Petrônio_Cândido_de_Lima_e_Silva">Petrônio Cândido de Lima e Silva</a>,--}}
+                                        {{--<a href="team/20/Marcos Antonio Alves">Marcos Antonio Alves</a>,--}}
+                                        {{--<a href="team/22/Carlos_Alberto_Severiano_Junior">Carlos Alberto Severiano Junior</a>,--}}
+                                        {{--<a href="team/4/Gustavo_Linhares_Vieira">Gustavo Linhares Vieira</a>,--}}
+                                        {{--<a href="team/1/Frederico_Gadelha_Guimarães">Frederico Gadelha Guimarães</a>,--}}
+                                        {{--<a href="team/5/Hossein_Javedani_Sadaei">Hossein Javedani Sadaei</a>--}}
+                                    {{--</span></span>--}}
+                                {{--</div>--}}
+                                {{--<div class="meta-line">--}}
+                                    {{--<span class="material-icons-description"><span class="p"><a href="{{url('publications')}}">Conference: XIII Brazilian Congress on Computational Intelligence</a></span></span>--}}
+                                    {{--<span class="material-icons-event inset-xs-left-30"><time datetime="2017-11-01">November 2017</time></span>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="post paper">--}}
+                            {{--<a class="h3" href="https://www.researchgate.net/publication/318792498_REGRESSAO_LINEAR_APLICADA_NA_PREDICAO_DE_SERIES_TEMPORAIS_FUZZY">REGRESSÃO LINEAR APLICADA NA PREDIÇÃO DE SERIES TEMPORAIS FUZZY</a>--}}
+                            {{--<div class="post-meta">--}}
+                                {{--<div class="meta-line">--}}
+                                    {{--<span class="material-icons-person"><span class="p">--}}
+                                            {{--<a href="#">Francirley Resendes Borges Costa</a>,--}}
+                                            {{--<a href="team/3/Petrônio_Cândido_de_Lima_e_Silva">Petrônio Cândido de Lima e Silva</a>,--}}
+                                            {{--<a href="team/1/Frederico_Gadelha_Guimarães">Frederico Gadelha Guimarães</a>,--}}
+                                            {{--<span>Lucas Batista</span>--}}
+                                    {{--</span></span>--}}
+                                {{--</div>--}}
+                                {{--<div class="meta-line">--}}
+                                    {{--<span class="material-icons-description"><span class="p"><a href="{{url('publications')}}">Conference: XIII Simpósio Brasileiro de Automação Inteligente - SBAI 2017</a></span></span>--}}
+                                    {{--<span class="material-icons-event inset-xs-left-30"><time datetime="2017-11-01">October 2017</time></span>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="post paper">--}}
+                            {{--<a class="h3" href="https://www.researchgate.net/publication/320809426_Fuzzy_Multi-Criteria_Decision_Making_Methods_with_Uncertainty_Scenarios">Fuzzy Multi-Criteria Decision Making Methods with Uncertainty Scenarios</a>--}}
+                            {{--<div class="post-meta">--}}
+                                {{--<div class="meta-line">--}}
+                                    {{--<span class="material-icons-person"><span class="p">--}}
+                                            {{--<a href="team/20/Marcos Antonio Alves">Marcos Antonio Alves</a>,--}}
+                                            {{--<a href="team/1/Frederico_Gadelha_Guimarães">Frederico Gadelha Guimarães</a>--}}
+                                    {{--</span></span>--}}
+                                {{--</div>--}}
+                                {{--<div class="meta-line">--}}
+                                    {{--<span class="material-icons-description"><span class="p"><a href="{{url('publications')}}">Conference: XIII Brazilian Congress on Computational Intelligence</a></span></span>--}}
+                                    {{--<span class="material-icons-event inset-xs-left-30"><time datetime="2017-11-01">November 2017</time></span>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="section-top-27" style="text-align: center">--}}
+                            {{--<a href="{{url('publications')}}" class="link link--effect-12">More papers</a>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</section>--}}
+
+        {{--Recent Papers--}}
         <section class="section-80">
             <div class="shell">
                 <div class="range">
                     <div class="cell-md-4 text-center">
                         <div class="divider divider-1"></div>
-                        <h1 class="divider-off text-uppercase section-md-27">Recent<br class="hidden visible-md-block visible-lg-block">	Papers
+                        <h1 class="divider-off text-uppercase section-md-27">Recent<br class="hidden visible-md-block visible-lg-block">	Projects
                         </h1>
                         <div class="divider divider-1"></div>
                     </div>
@@ -123,44 +193,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="post paper">
-                            <a class="h3" href="https://www.researchgate.net/publication/318792498_REGRESSAO_LINEAR_APLICADA_NA_PREDICAO_DE_SERIES_TEMPORAIS_FUZZY">REGRESSÃO LINEAR APLICADA NA PREDIÇÃO DE SERIES TEMPORAIS FUZZY</a>
-                            <div class="post-meta">
-                                <div class="meta-line">
-                                    <span class="material-icons-person"><span class="p">
-                                            <a href="#">Francirley Resendes Borges Costa</a>,
-                                            <a href="team/3/Petrônio_Cândido_de_Lima_e_Silva">Petrônio Cândido de Lima e Silva</a>,
-                                            <a href="team/1/Frederico_Gadelha_Guimarães">Frederico Gadelha Guimarães</a>,
-                                            <span>Lucas Batista</span>
-                                    </span></span>
-                                </div>
-                                <div class="meta-line">
-                                    <span class="material-icons-description"><span class="p"><a href="{{url('publications')}}">Conference: XIII Simpósio Brasileiro de Automação Inteligente - SBAI 2017</a></span></span>
-                                    <span class="material-icons-event inset-xs-left-30"><time datetime="2017-11-01">October 2017</time></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="post paper">
-                            <a class="h3" href="https://www.researchgate.net/publication/320809426_Fuzzy_Multi-Criteria_Decision_Making_Methods_with_Uncertainty_Scenarios">Fuzzy Multi-Criteria Decision Making Methods with Uncertainty Scenarios</a>
-                            <div class="post-meta">
-                                <div class="meta-line">
-                                    <span class="material-icons-person"><span class="p">
-                                            <a href="team/20/Marcos Antonio Alves">Marcos Antonio Alves</a>,
-                                            <a href="team/1/Frederico_Gadelha_Guimarães">Frederico Gadelha Guimarães</a>
-                                    </span></span>
-                                </div>
-                                <div class="meta-line">
-                                    <span class="material-icons-description"><span class="p"><a href="{{url('publications')}}">Conference: XIII Brazilian Congress on Computational Intelligence</a></span></span>
-                                    <span class="material-icons-event inset-xs-left-30"><time datetime="2017-11-01">November 2017</time></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="section-top-27" style="text-align: center">
-                            <a href="{{url('publications')}}" class="link link--effect-12">More papers</a>
-                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
+
     </section>
 @endsection
