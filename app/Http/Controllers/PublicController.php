@@ -9,6 +9,8 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\User;
 use App\Post;
+use App\Resource;
+use App\Project;
 
 class PublicController extends Controller
 {
@@ -71,5 +73,20 @@ class PublicController extends Controller
     public function getPost($p_id){
         $v_post =  Post::getPost($p_id);
         return view('post')->with(['p_post' => $v_post]);
+    }
+
+    public function getResources(){
+        $v_resources =  Resource::getResources();
+        return view('resources')->with(['p_resources' => $v_resources]);
+    }
+
+    public function getProjects(){
+        $v_projects =  Project::getProjects();
+        return view('projects')->with(['p_projects' => $v_projects]);
+    }
+
+    public function getProject($p_id){
+        $v_project =  Project::getProject($p_id);
+        return view('projects')->with(['p_project' => $v_project]);
     }
 }
