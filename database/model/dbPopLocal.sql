@@ -98,7 +98,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `resource` WRITE;
 /*!40000 ALTER TABLE `resource` DISABLE KEYS */;
-INSERT INTO `resource` VALUES (1,'AT.m','MATLAB script for the Aggregation Tree','downloads/AT.m',1,23,'2018-03-28 00:00:00','2018-03-28 00:00:00'),(2,'CAP_vis.R','R script for the Integrated Visualization Tool','downloads/CAP_vis.R',1,23,'2018-03-28 00:00:00','2018-03-28 00:00:00');
+INSERT INTO `resource` VALUES (1,'AT.m','MATLAB script for the Aggregation Tree','downloads/AT.m',1,23,'2018-03-28 00:00:00','2018-03-28 00:00:00',1),(2,'CAP_vis.R','R script for the Integrated Visualization Tool','downloads/CAP_vis.R',1,23,'2018-03-28 00:00:00','2018-03-28 00:00:00',1);
 /*!40000 ALTER TABLE `resource` ENABLE KEYS */;
 UNLOCK TABLES;
 
