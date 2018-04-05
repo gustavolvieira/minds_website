@@ -38,6 +38,7 @@
 
 
             {{--Researchers--}}
+            <div class="shell">
             <div class="range section-top-35">
                 <div class="cell-md-3 text-center">
                     <div class="divider divider-8"></div>
@@ -45,28 +46,30 @@
                     <div class="divider divider-8"></div>
                 </div>
                 <div class="cell-md-9 section-xs-top-35 section-xs-bottom-35">
-                  <div class="range">
-                      @foreach($p_researchers as $i_user)
-                          <?php
-                              if($i_user['photo_url'] == null){
-                                      $i_user['photo_url'] = 'images/defaults/user-image.png';
-                                  }
-                          ?>
-                          <div class="cell-md-4 cell-sm-6">
-                              <div class="text-md-left text-left">
-                                  <a href="{{url('team/' . $i_user['user_id'] . '/' . str_replace(' ', '_', $i_user['full_name']))}}">
-                                      <div class="ratio-four-three">
-                                          <div class="content">
-                                              <img src="{{asset($i_user['photo_url'])}}" alt="{{$i_user['full_name'] . ' picture'}}">
+                    <div class="shell">
+                        <div class="range">
+                            @foreach($p_researchers as $i_user)
+                              <?php
+                                  if($i_user['photo_url'] == null){
+                                          $i_user['photo_url'] = 'images/defaults/user-image.png';
+                                      }
+                              ?>
+                              <div class="cell-md-4 cell-sm-6">
+                                  <div class="text-md-left text-left">
+                                      <a href="{{url('team/' . $i_user['user_id'] . '/' . str_replace(' ', '_', $i_user['full_name']))}}">
+                                          <div class="ratio-four-three">
+                                              <div class="content">
+                                                  <img src="{{asset($i_user['photo_url'])}}" alt="{{$i_user['full_name'] . ' picture'}}">
+                                              </div>
                                           </div>
-                                      </div>
-                                      <h5 class="offset-top-16">{{$i_user['full_name']}}</h5>
-                                  </a>
-                                  <p class="offset-top-5 line-height">{{$i_user['label']}}</p>
+                                          <h5 class="offset-top-16">{{$i_user['full_name']}}</h5>
+                                      </a>
+                                      <p class="offset-top-5 line-height">{{$i_user['label']}}</p>
+                                  </div>
                               </div>
-                          </div>
-                      @endforeach
-                  </div>
+                          @endforeach
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -78,27 +81,29 @@
                     <div class="divider divider-7"></div>
                 </div>
                 <div class="cell-md-8 section-xs-top-35 section-xs-bottom-35">
-                    <div class="range">
-                        @foreach($p_collaborators as $i_user)
-                            <?php
-                                if($i_user['photo_url'] == null){
-                                        $i_user['photo_url'] = 'images/defaults/user-image.png';
-                                    }
-                            ?>
-                            <div class="cell-md-4 cell-sm-6">
-                                <div class="text-md-left text-left">
-                                    <a href="{{url('team/' . $i_user['user_id'] . '/' . str_replace(' ', '_', $i_user['full_name']))}}">
-                                        <div class="ratio-four-three">
-                                            <div class="content">
-                                                <img src="{{asset($i_user['photo_url'])}}" alt="{{$i_user['full_name'] . ' picture'}}">
+                    <div class="shell">
+                        <div class="range">
+                            @foreach($p_collaborators as $i_user)
+                                <?php
+                                    if($i_user['photo_url'] == null){
+                                            $i_user['photo_url'] = 'images/defaults/user-image.png';
+                                        }
+                                ?>
+                                <div class="cell-md-4 cell-sm-6">
+                                    <div class="text-md-left text-left">
+                                        <a href="{{url('team/' . $i_user['user_id'] . '/' . str_replace(' ', '_', $i_user['full_name']))}}">
+                                            <div class="ratio-four-three">
+                                                <div class="content">
+                                                    <img src="{{asset($i_user['photo_url'])}}" alt="{{$i_user['full_name'] . ' picture'}}">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <h5 class="offset-top-16">{{$i_user['full_name']}}</h5>
-                                    </a>
-                                    <p class="offset-top-5 line-height">{{$i_user['affiliation']}}, {{$i_user['country']}}</p>
+                                            <h5 class="offset-top-16">{{$i_user['full_name']}}</h5>
+                                        </a>
+                                        <p class="offset-top-5 line-height">{{$i_user['affiliation']}}, {{$i_user['country']}}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
@@ -111,30 +116,32 @@
                     <div class="divider divider-8"></div>
                 </div>
                 <div class="cell-md-9 section-xs-top-35 section-xs-bottom-35">
-                    <div class="range">
-                        @foreach($p_alumni as $i_user)
-                            <?php
-                                if($i_user['photo_url'] == null){
-                                        $i_user['photo_url'] = 'images/defaults/user-image.png';
-                                    }
-                            ?>
-                            <div class="cell-md-3 cell-sm-6">
-                                <div class="text-md-left text-left">
-                                    <a href="{{url('team/' . $i_user['user_id'] . '/' . str_replace(' ', '_', $i_user['full_name']))}}">
-                                        <div class="ratio-four-three">
-                                            <div class="content">
-                                                <img src="{{asset($i_user['photo_url'])}}" alt="{{$i_user['full_name'] . ' picture'}}">
+                    <div class="shell">
+                        <div class="range">
+                            @foreach($p_alumni as $i_user)
+                                <?php
+                                    if($i_user['photo_url'] == null){
+                                            $i_user['photo_url'] = 'images/defaults/user-image.png';
+                                        }
+                                ?>
+                                <div class="cell-md-3 cell-sm-6">
+                                    <div class="text-md-left text-left">
+                                        <a href="{{url('team/' . $i_user['user_id'] . '/' . str_replace(' ', '_', $i_user['full_name']))}}">
+                                            <div class="ratio-four-three">
+                                                <div class="content">
+                                                    <img src="{{asset($i_user['photo_url'])}}" alt="{{$i_user['full_name'] . ' picture'}}">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <h5 class="offset-top-16">{{$i_user['full_name']}}</h5>
-                                    </a>
-                                    <p class="offset-top-5 line-height">{{$i_user['label'] . ', ' . $i_user['end_year']}}</p>
+                                            <h5 class="offset-top-16">{{$i_user['full_name']}}</h5>
+                                        </a>
+                                        <p class="offset-top-5 line-height">{{$i_user['label'] . ', ' . $i_user['end_year']}}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        @endforeach
-
+                            @endforeach
+                        </div>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     </section>
