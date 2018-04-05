@@ -62,11 +62,15 @@ class PublicController extends Controller
 
     public function getHome(){
         $v_news = Post::getRecentPosts(3);
-        return view('index')->with(['p_news' => $v_news]);
+        $v_projectsReturn = Project::getProjects(3);
+        $v_projects = $v_projectsReturn['projects'];
+        $v_usersLists = $v_projectsReturn['usersLists'];
+        $v_tagsLists = $v_projectsReturn['tagsLists'];
+        return view('index')->with(['p_news' => $v_news, 'p_projects' => $v_projects, 'p_usersLists' => $v_usersLists, 'p_tagsLists' => $v_tagsLists]);
     }
 
     public function getNews(){
-        $v_news = Post::getRecentPosts(5);
+        $v_news = Post::getRecentPosts(20);
         return view('news')->with(['p_news' => $v_news]);
     }
 
@@ -90,6 +94,6 @@ class PublicController extends Controller
 
     public function getProject($p_id){
         $v_project =  Project::getProject($p_id);
-        return view('projects')->with(['p_project' => $v_project]);
+        return view('project')->with(['p_project' => $v_project]);
     }
 }

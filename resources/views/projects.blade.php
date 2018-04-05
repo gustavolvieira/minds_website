@@ -30,14 +30,11 @@
                                     </span>
                                     <span class="material-icons-event inset-xs-left-30">
                                         <time datetime="">
-                                            <?php
-                                                if ($i_project['end_date'] == null)
-                                                    $i_date = date('F Y', (strtotime($i_project['start_date']))) . ' ongoing';
-                                                else{
-                                                    $i_date = date('F Y', (strtotime($i_project['start_date']))) . ' - ' . date('F Y', (strtotime($i_project['end_date'])));
-                                                }
-                                            ?>
-                                            {{$i_date}}
+                                            @if ($i_project['end_date'] == null)
+                                                {{date('F Y', (strtotime($i_project['start_date']))) . ' ongoing'}}
+                                            @else
+                                                {{date('F Y', (strtotime($i_project['start_date']))) . ' - ' . date('F Y', (strtotime($i_project['end_date'])))}}
+                                            @endif
                                         </time>
                                     </span>
                                 </div>
@@ -53,7 +50,7 @@
                                     </div>
                                 @endif
                             </div>
-                            <p>{{$i_project['description']}}</p>
+                            {!! explode('</p>', $i_project['description'])[0] !!}
                             <div class="text-center">
                                 <a href="{{url('project/' . $i_project['id'])}}" class="link link--effect-12">read more</a>
                             </div>

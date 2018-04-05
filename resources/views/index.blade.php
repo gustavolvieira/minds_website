@@ -173,27 +173,43 @@
                         </h1>
                         <div class="divider divider-1"></div>
                     </div>
-                    <div class="cell-md-8 cell-sm-12 text-left">
-                        <div class="post paper">
-                            <a class="h3" href="https://www.researchgate.net/publication/320809382_Probabilistic_Forecasting_with_Seasonal_Ensemble_Fuzzy_Time-Series">Probabilistic Forecasting with Seasonal Ensemble Fuzzy Time-Series</a>
-                            <div class="post-meta">
-                                <div class="meta-line">
-                                    <span class="material-icons-person"><span class="p">
-                                        <a href="team/3/Petrônio_Cândido_de_Lima_e_Silva">Petrônio Cândido de Lima e Silva</a>,
-                                        <a href="team/20/Marcos Antonio Alves">Marcos Antonio Alves</a>,
-                                        <a href="team/22/Carlos_Alberto_Severiano_Junior">Carlos Alberto Severiano Junior</a>,
-                                        <a href="team/4/Gustavo_Linhares_Vieira">Gustavo Linhares Vieira</a>,
-                                        <a href="team/1/Frederico_Gadelha_Guimarães">Frederico Gadelha Guimarães</a>,
-                                        <a href="team/5/Hossein_Javedani_Sadaei">Hossein Javedani Sadaei</a>
-                                    </span></span>
-                                </div>
-                                <div class="meta-line">
-                                    <span class="material-icons-description"><span class="p"><a href="{{url('publications')}}">Conference: XIII Brazilian Congress on Computational Intelligence</a></span></span>
-                                    <span class="material-icons-event inset-xs-left-30"><time datetime="2017-11-01">November 2017</time></span>
-                                </div>
+                    @foreach($p_projects as $i_index => $i_project)
+                        <div class="cell-md-8 cell-sm-12 text-left">
+                            <div class="post paper">
+                                <a class="h3" href="{{url('project/' . $i_project['id'])}}">{{$i_project['name']}}</a>
+                                <div class="post-meta">
+                                    <div class="meta-line">
+                                        <span class="material-icons-person">
+                                            <span class="p">
+                                                @foreach($p_usersLists[$i_index] as $i_indexUser => $i_user)
+                                                    <a href="{{url('team/' . $i_user['user_id'] . '/' . str_replace(' ', '_', $i_user['user_name']))}}">{{$i_user['user_name']}}</a>@if($i_indexUser+1 < count($p_usersLists[$i_index])),@endif
+                                                @endforeach
+                                            </span>
+                                        </span>
+                                        <span class="material-icons-event inset-xs-left-30">
+                                            <time datetime="">
+                                                @if ($i_project['end_date'] == null)
+                                                    {{date('F Y', (strtotime($i_project['start_date']))) . ' ongoing'}}
+                                                @else
+                                                    {{date('F Y', (strtotime($i_project['start_date']))) . ' - ' . date('F Y', (strtotime($i_project['end_date'])))}}
+                                                @endif
+                                            </time>
+                                        </span>
+                                    </div>
+                                    @if(count($p_tagsLists[$i_index]) > 0)
+                                        <div class="meta-line">
+                                        <span class="material-icons-label_outline">
+                                            <span class="p">
+                                                @foreach($p_tagsLists[$i_index] as $i_indexTags => $i_tag)
+                                                    <a href="#">{{$i_tag['name']}}</a>@if($i_indexTags+1 < count($p_tagsLists[$i_index])),@endif
+                                                @endforeach
+                                            </span>
+                                        </span>
+                                        </div>
+                                    @endif
                             </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>

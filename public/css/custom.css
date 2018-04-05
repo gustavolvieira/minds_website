@@ -348,6 +348,11 @@
 .mfp-image-holder .mfp-content {
   transform: translateY(-3%); }
 
+#project #resources .post .post-meta {
+  margin-top: 0; }
+#project a.thumb {
+  height: 290px; }
+
 #news #title {
   font-size: 36px; }
 

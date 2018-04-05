@@ -286,6 +286,16 @@ $green-lighter: #27c4ce;
   transform: translateY(-3%);
 }
 
+#project{
+
+  #resources .post .post-meta {
+    margin-top: 0;
+  }
+
+  a.thumb{
+    height: 290px;
+  }
+}
 
 
 // - News
