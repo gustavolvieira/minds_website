@@ -30,7 +30,7 @@
                         {{--<li><a href="{{url('publications')}}">Publications</a></li>--}}
                         <li><a href="{{url('team')}}">Team</a></li>
                         <li><a href="{{url('projects')}}">Projects</a></li>
-                        <li><a href="{{url('resources')}}">Resources</a></li>
+                        <li><a href="{{url('download_resources')}}">Resources</a></li>
                         {{--<li><a href="{{url('products')}}">Team</a>--}}
                             {{--<ul class="rd-navbar-dropdown">--}}
                                 {{--<li><a href="#">Students</a></li>--}}

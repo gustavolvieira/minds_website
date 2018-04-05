@@ -66,7 +66,7 @@ Route::get('/publications', function () {
 Route::get('/news', 'PublicController@getNews');
 Route::get('/news/{p_id}', 'PublicController@getPost');
 
-Route::get('/resources', 'PublicController@getResources');
+Route::get('/download_resources', 'PublicController@getResources');
 Route::get('/projects', 'PublicController@getProjects');
 Route::get('/project/{p_id}', 'PublicController@getProject');
 
