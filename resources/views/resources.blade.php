@@ -22,7 +22,7 @@
                             <div class="post-meta">
                                 <div class="meta-line">
                                     <span class="material-icons-person"><span class="p">
-                                        <a href="team/3/{{$i_resource['user_id']}}">{{$i_resource['user_name']}}</a>
+                                        <a href="team/3/{{$i_resource['user_id'] . '/' . str_replace(' ', '_', $i_resource['user_name'])}}">{{$i_resource['user_name']}}</a>
                                     </span></span>
                                     <span class="material-icons-event inset-xs-left-30"><time datetime="2017-11-01">{{date('M d, Y', (strtotime($i_resource['updated_at'])))}}</time></span>
                                 </div>
@@ -32,7 +32,6 @@
                             </div>
                             <p>{{$i_resource['description']}}</p>
                             <div class="download-div post-meta section-xs-top-15">
-                                {{--<a href="{{url('https://www.google.com')}}" class="download-btn" download><span class="material-icons-file_download"><span>Download</span></span></a>--}}
                                 <a href="{{asset($i_resource['file_path'])}}" class="download-btn" download><span class="material-icons-file_download"><span>Download</span></span></a>
                             </div>
                         </div>
