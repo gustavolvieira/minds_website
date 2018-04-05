@@ -18,36 +18,44 @@
                 @foreach($p_projects as $i_index => $i_project)
                     <div class="cell-md-12 section-bottom-45">
                         <div class="post paper">
-                            <span class="h3">{{$i_project['title']}}</span>
+                            <span class="h3">{{$i_project['name']}}</span>
                             <div class="post-meta">
                                 <div class="meta-line">
-                                    <span class="material-icons-person"><span class="p">
-                                        <a href="team/3/Petrônio_Cândido_de_Lima_e_Silva">Ivan etc etc</a>
-                                    </span></span>
+                                    <span class="material-icons-person">
+                                        <span class="p">
+                                            @foreach($p_usersLists[$i_index] as $i_indexUser => $i_user)
+                                                <a href="{{url('team/' . $i_user['user_id'] . '/' . str_replace(' ', '_', $i_user['user_name']))}}">{{$i_user['user_name']}}</a>@if($i_indexUser+1 < count($p_usersLists[$i_index])),@endif
+                                            @endforeach
+                                        </span>
+                                    </span>
                                     <span class="material-icons-event inset-xs-left-30">
                                         <time datetime="">
                                             <?php
                                                 if ($i_project['end_date'] == null)
-                                                    $i_date = date('M Y', (strtotime($i_project['start_at']))) . ' ongoing';
+                                                    $i_date = date('F Y', (strtotime($i_project['start_date']))) . ' ongoing';
                                                 else{
-                                                    $i_date = date('M Y', (strtotime($i_project['start_at']))) . ' - ' . date('M Y', (strtotime($i_project['end_at'])));
+                                                    $i_date = date('F Y', (strtotime($i_project['start_date']))) . ' - ' . date('F Y', (strtotime($i_project['end_date'])));
                                                 }
                                             ?>
                                             {{$i_date}}
                                         </time>
                                     </span>
                                 </div>
-                                <div class="meta-line">
-                                    <span class="material-icons-label_outline"><span class="p">
-                                        <a href="#">Multiobjective Optimization,</a>
-                                        <a href="#">Visualization,</a>
-                                        <a href="#">Manyobjective Optimization</a>
-                                    </span></span>
-                                </div>
+                                @if(count($p_tagsLists[$i_index]) > 0)
+                                    <div class="meta-line">
+                                        <span class="material-icons-label_outline">
+                                            <span class="p">
+                                                @foreach($p_tagsLists[$i_index] as $i_indexTags => $i_tag)
+                                                    <a href="#">{{$i_tag['name']}}</a>@if($i_indexTags+1 < count($p_tagsLists[$i_index])),@endif
+                                                @endforeach
+                                            </span>
+                                        </span>
+                                    </div>
+                                @endif
                             </div>
-                            <p>Data Visualization in high-dimensional spaces is a great challenge and an important tool for decision-making.  The method of Aggregation Trees was an important step in visualization in MaOPs, allowing a greater understanding of the problem. This method is based on the sequential aggregation of objectives, which is visually represented into a tree, based on a measure of conflict between pairs of (groups of) objectives. The method allows the visualization of a hierarchy for aggregation of the objectives, with poss ...</p>
+                            <p>{{$i_project['description']}}</p>
                             <div class="text-center">
-                                <a href="#" class="link link--effect-12">read more</a>
+                                <a href="{{url('project/' . $i_project['id'])}}" class="link link--effect-12">read more</a>
                             </div>
                         </div>
                     </div>

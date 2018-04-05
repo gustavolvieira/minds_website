@@ -81,8 +81,11 @@ class PublicController extends Controller
     }
 
     public function getProjects(){
-        $v_projects =  Project::getProjects();
-        return view('projects')->with(['p_projects' => $v_projects]);
+        $v_projectsReturn =  Project::getProjects();
+        $v_projects = $v_projectsReturn['projects'];
+        $v_usersLists = $v_projectsReturn['usersLists'];
+        $v_tagsLists = $v_projectsReturn['tagsLists'];
+        return view('projects')->with(['p_projects' => $v_projects, 'p_usersLists' => $v_usersLists, 'p_tagsLists' => $v_tagsLists]);
     }
 
     public function getProject($p_id){
