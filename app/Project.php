@@ -75,8 +75,8 @@ class Project extends Model
     }
 
     public static function getProject($p_id){
-        $v_project = Project::where('project.is_active', 1)
-            ->find($p_id)
+        $v_project = Project::where('project.is_active', '=', 1)
+            ->where('id', '=', $p_id)
             ->firstOrFail();
 
 //        $v_usersLists[] = Project::getUsers($i_project['id']);
